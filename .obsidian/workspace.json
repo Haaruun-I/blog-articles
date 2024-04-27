@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Test note one.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "cf16901e07e1ef74",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "link one.md",
+                "file": "Shamless Cross Promotion.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "link one.md",
+                "file": "Shamless Cross Promotion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "link one.md",
+                "file": "Shamless Cross Promotion.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "link one.md"
+                "file": "Shamless Cross Promotion.md"
               }
             }
           }
@@ -159,9 +146,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cf16901e07e1ef74",
+  "active": "8dd69716428d4612",
   "lastOpenFiles": [
-    "Test note one.md",
-    "link one.md"
+    "link one.md",
+    "Shamless Cross Promotion.md"
   ]
 }
