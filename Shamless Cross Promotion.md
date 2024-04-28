@@ -1,14 +1,32 @@
-Some other blogs I like, and sites of some friends (not mutually exclusive)
 
----
+[Sarah Soueidan](https://www.sarasoueidan.com/blog/):
 
-<https://www.sarasoueidan.com/blog/>
+Talks about accessible design
 
-<https://surma.dev/>
+  
 
-<https://jakearchibald.com/>
+[Das Surma](https://surma.dev/):
 
-<https://una.im>
+Javascript and WebAssembly stuff
+
+  
+
+[Jake Archibald](https://jakearchibald.com/):
+
+Browser internals and page performance
+
+  
+
+[Una Kravets](https://una.im):
+
+CSS and Design tips and news
+
+  
+
+[Jeff Gearling](https://www.jeffgeerling.com/):
+
+Single Board Computers and other hobby hardware
+
 
 
 <http://notes.kaitlyn.works/>
