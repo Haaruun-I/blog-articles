@@ -1,4 +1,8 @@
 
+Some blogs i like, and some sites of friends (not mutually exclusive)
+
+---
+
 [Sarah Soueidan](https://www.sarasoueidan.com/blog/):
 
 Talks about accessible design
