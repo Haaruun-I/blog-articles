@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c77b4aff873f26a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Networking Guide.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Shamless Cross Promotion.md",
+                "file": "Networking Guide.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Shamless Cross Promotion.md",
+                "file": "Networking Guide.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Shamless Cross Promotion.md"
+                "file": "Networking Guide.md"
               }
             }
           }
@@ -146,9 +159,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8dd69716428d4612",
+  "active": "c77b4aff873f26a1",
   "lastOpenFiles": [
-    "link one.md",
-    "Shamless Cross Promotion.md"
+    "Shamless Cross Promotion.md",
+    "Networking Guide.md",
+    "RTOS Scheduling.md",
+    "link one.md"
   ]
 }

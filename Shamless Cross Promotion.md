@@ -1,6 +1,5 @@
 
 Some blogs i like, and some sites of friends (not mutually exclusive)
-
 ---
 
 [Sarah Soueidan](https://www.sarasoueidan.com/blog/):
@@ -30,7 +29,3 @@ CSS and Design tips and news
 [Jeff Gearling](https://www.jeffgeerling.com/):
 
 Single Board Computers and other hobby hardware
-
-
-
-<http://notes.kaitlyn.works/>

@@ -1,0 +1,99 @@
+Motiviation for this article here:
+ttt
+t
+t
+t
+# What Even Is the Internet?
+
+The Internet is made up of computers each forming networks, and smaller networks combining to form bigger networks. There's your computer's internal network, the connection from your computer to the nearest switch or access point, to your router, your ISP, and to the wider internet.
+
+It's often helpful to think of things in multiple layers. There's the physical layer of ethernet or wifi, the protocols used to organize and send data on your local network or LAN, and the IP and BGP routing layer used between networks. And then the application layer, where your HTTP requests or emails go.
+
+// todo: diagram here
+# The Link Layer
+
+The first 'layer' of a network is the physical medium by which the information is carried, like radio, copper wire, or fiberglass, but that is a bit beyond the scope of this article, so let's skip to the second layer, the `link layer`. 
+
+//this explanation sucks, need halp :(
+The link layer is the protocols used to interpret whatever data was sent over the physical hardware, that's the difference between the electrical impulses being sent over a wire, and the conversion to binary data.
+
+Although there are many diffrent options, Ethernet is one of the most common link layer protocols being used. and also one of the easiest to explain, so let's start there. 
+## Packets 
+
+When you connect to another computer over the internet, your data isn't sent all at once over one path, it's split into many chunks called `packets`. Each packet can take its own path through the network, and get recombined on the other end.
+
+This is because the internet was designed to be resilient to failure. Some of the core components are inventions by the US military, and one of the primary design constraints was being able to survive an attack that took out connections. It also comes with other benefits, like allowing one physical link to carry more than one connection at a time.
+
+Packets usually consist of `headers`, `data`, and a `checksum`. Headers are the metadata added by each layer handling the packet, like address information, or timeouts. The data is, well, the data to be sent to the other computer, the checksum is a small number at the end that can be used to verify the data got there uncorrupted.
+
+//todo link to thing about ecc l8r'
+
+Ethernet headers are usually 20 bytes, with the destination and source MAC addresses, along with a type. 
+
+// TODO diagram here of packet
+## Ethernet Switching
+
+MAC addresses are (hopefully) unique IDs for every networking card in the world, each manufacturer is assigned a block of addresses they can assign to the cards they made, and are used to tell what computer is at the other end of any connection.
+
+In unswitched networks, all packets are sent to all network cards, and it is up to the network card to filter any packets sent to the host computer, but in switched networks, there is a computer whose job it is to remember where each MAC address is in a network and send it on, called a `switch`.
+## Datagram Forwarding
+
+To do that, they use internal `routing tables`. Routing tables are tables that take a destination address, and give the `next hop` or the address of the closest machine to the destination it is connected to.
+
+// todo diagram & table example here
+
+They can also come with default routes, where they send any traffic they are unsure of. These usually lead to other switches closer to the center of the network, which would have a more complete view of the network.
+
+// todo, diagram here
+
+There is also the special case of the `broadcast address`, which a switch would forward to everyone. These are generally used when you are first connecting to a network and are unsure 
+of what addresses to use
+## LANs and vLANs
+
+The part of a network accessible by only link layer switches is called your `Local Area Network` or LAN. 
+
+Switch software often comes with the ability to logically separate different physical parts of a LAN into separate `broadcast domains` or `vLANS`.  These are most often used to segment networks based on security level, you don't want your guest wifi to be able to access your security cameras, and logical separation allows them to all share one physical network. 
+
+You can also do the opposite, tying together multiple physical LANs into one vLAN. This is less common but is often helpful for making older pieces of equipment like office printers available from across a campus where it would otherwise be unreachable.
+# The Network Layer
+
+In my opinion, the `Network Layer` is badly named. It should be the `Inter-Network` layer. It's the layer that handles routing between various LANs across an internet. To do that, we use the `Internet Protocol` or IP for short.
+
+IP 
+## IP Addresses
+
+## Subnets
+
+IP blocks are devided into subnets, w
+## IP Forwarding
+
+IP Routers use Datagram Forwarding like Ethernet Switching, but instead of targeting individual computers, they route to whatever the closest subnet is.
+
+//todo we DEF need a digram here
+
+There are no broadcast addresses in IP, 
+
+
+## IP Routing
+
+## Network Address Translation
+
+IP originally assigned every computer a globally uniqe address, like MAC Addresses, and IPv6 still works that way. But the ipv4 address space is  far too small for that to be viable
+
+//move to diffrent article?
+There are various methods to get around NATs blocking of incomming requests, the most common is `port forwarding`, where you ask the router to reserve a port for you and pass along any incoming requests. This only works if you are expecting to receive a connection, and have permission to do so by whoever manages the network.
+
+Annother method is `NAT hole punching`, where two computers wanting to make a connection both reach out to an intermediary, which would note down the participants public ip and port and send it to the other. Because the port was first opened from the inside, it is able to recive the new connection the other computer.
+
+Routing Tables p2
+
+BGP and ASNs
+# The Transport Layer
+
+This is,, badly named again.
+# Reccommended Further Reading
+
+An Introduction to Computer Networks by Peter L Doral, 
+(or atleast chapter one, its a brilliant book)
+
+Faster Than Lime ()
