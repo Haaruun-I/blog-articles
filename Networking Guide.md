@@ -1,3 +1,5 @@
+(INSTALL GRAMMARLY TODAY! no seriously, i think it's needed)
+
 Networking cheatsheet for dummies (blurb here)
 
 ---
@@ -75,7 +77,8 @@ IP address are numbers assigned to ian individual network interface, there are t
 IPv6 addresses are 128 bit, and usually written in hexidecimel and each 16 bits split by colons, ex, `1111:2222:3333:4444:5555:6666:7777:8888`
 
 > sidenote
-> IPv4, being 32 bit, has only around 4billion addresses available. Problem, there are *far* more than 4billion devices connected to the internet, IPv6 attemptes to solve that issue by making a 128 bit address space. It hasnt yet replaced IPv4 because its not backwards compatible, and that NAT got *really really* good. 
+> IPv4, being 32 bit, has only around 4billion addresses available. Problem, there are *far* more than 4billion devices connected to the internet, IPv6 attemptes to solve that issue by making a 128 bit address space. It hasnt yet replaced IPv4 because its not backwards compatible, and that NAT got *really really* good.
+(what would "replacing" entail exactly? is it possible + what would it take for a device to access both ipv4/ipv6? maybe circle back to ipv4/ipv6 for websites when you get there)
 ## Subnets
 
 IP  was designed to be scaleable, no one router needs to know where everything is in a network, and no one authority needs to keep track of every IP. To help with this, IPs are split into blocks, and blocks are given to people to to assign as they see fit.
@@ -88,14 +91,17 @@ To describe a ip block or `subnet` you can put a slash at the end of any address
 Subnets are *hierarchical*, for example, facebook might use the whole `123.0.0.0/8` block for their whole network, and assign various subnets to datacenters in different cities, say `123.100.0.0/16` for New York, and `123.200.0.0/16` for Boston. 
 
 ## IP Forwarding
-
+(so the motivation: basically another way to pass packets over distances, but much longer than ethernet allows?)
 IP Routers use Datagram Forwarding like Ethernet Switching, but instead of targeting individual computers, they route to whatever the closest subnet is. 
 
 For example, if you are routing to `123.100.200.300`, the first few routers would go up the `default` path to some router at your ISP. The ISPs routers would then forward the traffic to whatever their routing tables say is closest to the `123.0.0.0/8` subdomain. When it reaches a server that knows where `123.100.0.0/16` is, it  would then route there and so on.
+(how is the "default" path assigned)
+(what does a routing table look like? also, if traffic is forwarded to a server that doesn't know where 123.100.0.0/16 is, what's done with the data)
 
 //todo we DEF need a digram here
 
 There are also broadcast IP addresses, usually either `255.255.255.255` for 'brroadcast to this network' or the network address followed by all binary ones for 'broadcast to a specific network'
+(why do we need this? can you provide a usecase)
 However, if the broadcast request comes from outside the network, it is usually ignored, if it even makes it there in the first place.
 
 
@@ -111,17 +117,22 @@ IP originally assigned every computer a globally uniqe address, like MAC Address
 ```
 
 If you are assigned a private IP address, and try to make a request outside your local network, the router can let you borrow its public IP address on a certain port to temporarily use. When requests come in or out, the router 'translates' from the public shared address to the private addresses.
-
+(needs a diagram, maybe the usecase of requesting a website at home?)
+(confusion on "the router 'translates' from the public shared address to the private addresses"; how and why?)
 >sidenote
 >Ports are a TCP thing, skip down to there if you need an explanation *right this seccond*, right now all you need to know is that they allow you to split traffic going to the same IP
 
-Carrier Grade NAT or CGNAT is when an ISP does the same thing, meaning there are two layers of translation between your computer and the wider internet. 
+Carrier Grade NAT or CGNAT is when an ISP does the same thing, meaning there are two layers of translation between your computer and the wider internet.
 
+(did i miss something or did you not explain what a NAT is before CGNAT? hence we don't know what you mean by "address you are given through NAT arent your own")
 Because the address you are given through NAT arent your own, you cannot wait and listen for requests coming *in* to the network, meaning that your computer is inaccessible to the outside world unless you initiate the connection first.
 
 There are a few ways of getting around this, but the most common is `port forwarding`, where you tell the router to keep a port free for incomming requests, and pass any along to you. This only works if you have permission from the router owner to do so, and if there isnt another layer of NAT between you and the internet.
+(insert scary warning about botnets trying to ssh into open ports)
+(also, internal/external port forwarding? more explanation plz)
 
 IP address collisions can still be a problem, however, especially when using multiple network connections at once, like cellular connection and wifi at once, or your local lan and a vpn to your office, (there isnt any real way to deal with this beyond manually fixing it each time it happens but i want some way to exp)
+(example example example)
 
 //diagram here
 # The Transport Layer
